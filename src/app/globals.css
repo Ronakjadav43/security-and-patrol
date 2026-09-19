@@ -1,0 +1,82 @@
+/* This project is almost entirely scraped WordPress/Elementor markup, styled
+   entirely by the WordPress CSS bundle imported in src/app/layout.tsx — no
+   CSS framework (Tailwind, Bootstrap) is used. A handful of hand-built
+   components (the quote modal, a few card/list widgets) previously used
+   Tailwind utility classes; those utilities collided with WordPress/
+   Elementor/Bootstrap class names that happen to share the same short,
+   generic names (`collapse`, `px-3`, `text-xl`, ...), silently overriding
+   real WordPress styling and causing real bugs (an accordion rendering
+   invisible, a number badge losing its background/colors). Those
+   components now use the plain, `u-`-prefixed classes below instead —
+   picked to never collide with anything in the WordPress bundle — or plain
+   inline styles. Add to this file the same way if another one is needed;
+   never re-add a class name that could exist in scraped markup. */
+
+.u-p-4 { padding: 1rem; }
+.u-px-3 { padding-left: 0.75rem; padding-right: 0.75rem; }
+.u-px-4 { padding-left: 1rem; padding-right: 1rem; }
+.u-pb-3 { padding-bottom: 0.75rem; }
+.u-mt-4 { margin-top: 1rem; }
+.u-mb-5 { margin-bottom: 1.25rem; }
+.u-pb-10 { padding-bottom: 2.5rem; }
+
+.u-text-2xl { font-size: 1.5rem; line-height: 2rem; }
+.u-text-xl { font-size: 1.25rem; line-height: 1.75rem; }
+.u-text-gray-200 { color: #e5e7eb; }
+.u-text-gray-400 { color: #9ca3af; }
+.u-text-white { color: #fff; }
+.u-text-justify { text-align: justify; }
+
+.u-font-light { font-weight: 500; }
+.u-font-semibold { font-weight: 600; }
+.u-tracking-wide { letter-spacing: 0.025em; }
+.u-tracking-wider { letter-spacing: 0.05em; }
+
+.u-border { border-width: 1px; border-style: solid; border-color: #d1d5db; }
+.u-overflow-hidden { overflow: hidden; }
+
+@media (min-width: 768px) {
+  .u-card-grid {
+    margin-bottom: -1rem;
+    border-bottom-width: 0;
+    border-right-width: 0;
+  }
+}
+
+.elementor-icon-box-content {
+  text-align: left;
+}
+
+/* .elementor-button-wrapper>.elementor-size-sm {
+    background-color: unset !important;
+    font-family: "Plus Jakarta Sans", Sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    fill: var(--e-global-color-kadence3);
+    color: #000 !important;
+    padding: 0 0 0 0;
+} */
+
+.elementor-button-wrapper a>span{
+      display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+  }
+
+.elementor-icon-box-title a {
+    font-family: "Plus Jakarta Sans", Sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: left;
+}
+
+.elementor-icon-box-content p {
+    font-family: "Plus Jakarta Sans", Sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    color: #7A7A7A;
+    text-align: left;
+}
+
+
+
