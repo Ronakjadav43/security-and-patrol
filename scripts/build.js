@@ -15,7 +15,7 @@ const { execSync } = require('child_process');
 // path Next.js resolves consistently cased.
 process.chdir(fs.realpathSync(process.cwd()));
 
-execSync('npx next build --webpack', { stdio: 'inherit', cwd: process.cwd() });
+execSync('npx next build', { stdio: 'inherit', cwd: process.cwd() });
 
 // next.config.ts sets output: 'standalone', which emits a minimal
 // .next/standalone/server.js but deliberately does NOT include the public/
